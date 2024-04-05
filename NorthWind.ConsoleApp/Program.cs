@@ -2,9 +2,7 @@
 
 HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 
-Builder.Services.AddFileWriter();
-Builder.Services.AddConsoleWriter();
-Builder.Services.AddDebugWriter();
+Builder.Services.AddNorthWindServices();
 
 Builder.Services.AddSingleton<AppLogger>();
 Builder.Services.AddSingleton<ProductService>();
