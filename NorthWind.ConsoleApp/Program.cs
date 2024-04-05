@@ -1,7 +1,11 @@
-﻿﻿HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
+﻿﻿using Microsoft.Extensions.DependencyInjection.Writers;
 
-Builder.Services.AddSingleton<IUserActionWriter, ConsoleWriter>();
-Builder.Services.AddSingleton<IUserActionWriter, DebugWriter>();
+HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
+
+Builder.Services.AddFileWriter();
+Builder.Services.AddConsoleWriter();
+Builder.Services.AddDebugWriter();
+
 Builder.Services.AddSingleton<AppLogger>();
 Builder.Services.AddSingleton<ProductService>();
 using IHost AppHost = Builder.Build();
