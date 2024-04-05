@@ -9,15 +9,12 @@ HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 Builder.Services.AddSingleton<IUserActionWriter, DebugWriter>();
 Builder.Services.AddSingleton<AppLogger>();
 Builder.Services.AddSingleton<ProductService>();
-using var AppHost = Builder.Build();
+using IHost AppHost = Builder.Build();
 
-
-IUserActionWriter Writer = new ConsoleWriter();
-
-AppLogger Logger = new AppLogger(Writer);
+AppLogger Logger = AppHost.Services.GetRequiredService<AppLogger>();
 Logger.WriteLog("Application Started.");
 
-ProductService Service = new ProductService(Writer);
+ProductService Service = AppHost.Services.GetRequiredService<ProductService>();
 Service.Add("Demo", "Azúcar Refinada");
 
 /*     IMPLEMENTACIONES DE TRES PRINCIPIOS IMPORTANTES
