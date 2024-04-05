@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.Extensions.DependencyInjection.Writers
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class DependencyContainer
     {
@@ -14,6 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection.Writers
             (this IServiceCollection services)
         {
             services.AddDebugWriter();
+            services.AddServices();
             return services;
         }
 

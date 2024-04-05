@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NorthWind.Core\NorthWind.Core.csproj" />
-    <ProjectReference Include="..\NorthWind.Writers\NorthWind.Writers.csproj" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NorthWind.Entities\NorthWind.Entities.csproj" />
   </ItemGroup>
 
 </Project>

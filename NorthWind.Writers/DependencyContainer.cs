@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.Extensions.DependencyInjection.Writers
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class DependencyContainer
     {
